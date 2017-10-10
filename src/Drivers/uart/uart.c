@@ -127,8 +127,6 @@ void UartInit(int baud, CommandHandler handler)
 void UartSend(uint8_t* data, uint8_t length)
 {    
     Queue_Push(&_sendQueue, 76);
-    uint8_t angle;
-    float dist;
     uint8_t parity = 0;
     
     for(uint8_t i = 0; i<length; i++)
