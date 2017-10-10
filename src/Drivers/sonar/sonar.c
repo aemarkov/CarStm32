@@ -60,7 +60,6 @@ void SonarInit(DistanceMeasuredHandler handler)
     
     TIM_Cmd(TIM15, ENABLE);
 	
-	//TIM_ITConfig(TIM15, TIM_IT_Update, ENABLE);  
     TIM_ITConfig(TIM15, TIM_IT_CC2, ENABLE);
     NVIC_EnableIRQ(TIM1_BRK_TIM15_IRQn);
     
@@ -99,7 +98,7 @@ uint16_t SonarMeasureDistance(void)
 ////////////////////////////////////////////////////////////////////////////////
 
 void TIM1_BRK_TIM15_IRQHandler()
-{
+{   
     if(TIM_GetITStatus(TIM15, TIM_IT_CC2)!=RESET)
     {
         TIM_ClearITPendingBit(TIM15, TIM_IT_CC2);

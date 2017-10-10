@@ -23,10 +23,8 @@ int main(void)
     DelayInit();
     MotorsInit();
     SonarInit(sonarHandler);
-    Delay_us(100000);
     
     while(1)
     {         
-        
     }
 }
